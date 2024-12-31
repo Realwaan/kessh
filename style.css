@@ -244,11 +244,34 @@ section {
   color: inherit; /* Ensure it inherits the color from the parent */
 }
 
+#socials-container .icon:hover {
+  color: #f39c12; /* Change color on hover */
+  transform: scale(1.2); /* Slightly increase size on hover */
+}
+
 /* ICONS */
 
 .icon {
   cursor: pointer;
   height: 2rem;
+  transition: color 0.3s ease;
+  font-size: 36px;
+}
+
+.icon:hover {
+  color: #f39c12; /* Change color on hover */
+  transform: scale(1.2); /* Slightly increase size on hover */
+}
+
+/* Arrow Icon */
+.arrow {
+  font-size: 36px; /* Adjust icon size */
+  transition: color 0.3s ease, transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.arrow:hover {
+  color: #f39c12; /* Change color on hover */
+  transform: scale(1.2); /* Slightly increase size on hover */
 }
 
 /* BUTTONS */
@@ -550,6 +573,10 @@ body.light-theme .contact-info-container a {
   color: #000000; /* Ensure link text color changes */
 }
 
+body.light-theme .arrow {
+  color: #000000; /* Arrow color in light theme */
+}
+
 /* Dark Theme */
 body.dark-theme {
   background-color: #000000;
@@ -575,6 +602,10 @@ body.dark-theme .contact-icon {
 
 body.dark-theme .contact-info-container a {
   color: #ffffff; /* Ensure link text color changes */
+}
+
+body.dark-theme .arrow {
+  color: #ffffff; /* Arrow color in dark theme */
 }
 
 
