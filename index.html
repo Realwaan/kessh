@@ -8,6 +8,9 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.5.0/parallax.min.js"></script>
   </head>
   <body>
     <nav id="desktop-nav">
@@ -47,26 +50,19 @@
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Keshie</h1>
         <p class="section__text__p2">12-STEM Micron</p>
-        <div class="btn-container">
+         <div class="btn-container">
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
             Contact Info
           </button>
         </div>
         <div id="socials-container">
-          <img
-            src="./assets/fb.png"
-            alt="My Facebook profile"
-            class="icon"
-            onclick="location.href='https://www.facebook.com/me'"
-          />
-          <img
-            src="./assets/ig.png"
-            alt="My instagram profile"
-            class="icon"
-            onclick="location.href='https://www.instagram.com/andrei.regulacion13/'"
-          />
+          <i class="fa-brands fa-facebook icon" onclick="location.href='https://www.facebook.com/me'"></i>
+          <i class="fa-brands fa-instagram icon" onclick="location.href='https://www.instagram.com/andrei.regulacion13/'"></i>
         </div>
       </div>
+      <button id="theme-toggle" onclick="toggleTheme()">
+        <i id="theme-icon" class="fa-solid fa-moon"></i>
+      </button>
     </section>
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
@@ -421,19 +417,11 @@
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
+          <i class="fa-solid fa-envelope icon contact-icon email-icon"></i>
           <p><a href="mailto:examplemail@gmail.com">119989120337@r7-2.deped.gov.ph</a></p>
         </div>
         <div class="contact-info-container">
-          <img
-            src="./assets/fb.png"
-            alt="Facebook icon"
-            class="icon contact-icon"
-          />
+          <i class="fa-brands fa-facebook icon contact-icon"></i>
           <p><a href="https://www.facebook.com/me">Facebook</a></p>
         </div>
       </div>

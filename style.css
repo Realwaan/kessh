@@ -26,6 +26,36 @@ a,
   transition: all 300ms ease;
 }
 
+.parallax {
+  background-image: url('./assets/niki2.'); /* Replace with your background image */
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.parallax::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay */
+  z-index: -1;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  padding: 50px;
+  color: white; /* Adjust text color for better visibility */
+}
+
+
 /* DESKTOP NAV */
 
 nav,
@@ -202,8 +232,16 @@ section {
 #socials-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  align-items: center; /* Vertically center the icons */
+  margin-top: 0.3rem;
+  gap: 0.3rem;
+}
+
+#socials-container .icon {
+  cursor: pointer;
+  margin: -100 1px;
+  font-size: 25px; /* Adjust icon size */
+  color: inherit; /* Ensure it inherits the color from the parent */
 }
 
 /* ICONS */
@@ -259,6 +297,36 @@ section {
 
 .btn-container {
   gap: 1rem;
+}
+
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 45px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  animation: float 3s ease-in-out infinite; /* Add floating animation */
+}
+
+#theme-toggle i {
+  transition: color 0.3s ease;
+}
+
+#theme-toggle:hover i {
+  color: #f39c12; /* Change color on hover */
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* ABOUT SECTION */
@@ -441,6 +509,7 @@ article .icon {
 
 .contact-icon {
   cursor: default;
+  font-size: 36px;
 }
 
 .email-icon {
@@ -457,3 +526,58 @@ footer {
 footer p {
   text-align: center;
 }
+
+/* Light Theme */
+body.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-theme .nav-links a {
+  color: #000000;
+}
+
+body.light-theme .section__text {
+  color: #000000;
+}
+
+body.light-theme .btn {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.light-theme .contact-info-container a {
+  color: #000000; /* Ensure link text color changes */
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.dark-theme .nav-links a {
+  color: #ffffff;
+}
+
+body.dark-theme .section__text {
+  color: #ffffff;
+}
+
+body.dark-theme .btn {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-theme .contact-icon {
+  color: #ffffff;
+}
+
+body.dark-theme .contact-info-container a {
+  color: #ffffff; /* Ensure link text color changes */
+}
+
+
+/* Additional styles for better layout */
+
+
