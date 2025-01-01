@@ -24,3 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
   themeIcon.classList.add('fa-moon');
   themeIcon.style.color = '#000000'; // Initial moon color
 });
+
+function toggleMenu() {
+  const menu = document.querySelector('.hamburger-menu');
+  menu.classList.toggle('active');
+}
+
+function openModal(videoId) {
+  const modal = document.getElementById('video-modal');
+  const iframes = modal.querySelectorAll('iframe');
+  iframes.forEach(iframe => {
+    iframe.style.display = 'none';
+    iframe.src = iframe.src; // Reset the video
+  });
+  document.getElementById(videoId).style.display = 'block';
+  modal.style.display = 'flex'; // Show the modal
+}
+
+function closeModal() {
+  const modal = document.getElementById('video-modal');
+  modal.style.display = 'none'; // Hide the modal
+  const iframes = modal.querySelectorAll('iframe');
+  iframes.forEach(iframe => {
+    iframe.src = iframe.src; // Stop the video
+  });
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById('video-modal');
+  if (event.target == modal) {
+    closeModal();
+  }
+}
